@@ -1,24 +1,66 @@
-# reference/
+## Foundry
 
-A runnable **reference implementation** of the standard in [`../spec/`](../spec/) — the
-"research-as-open-tooling" artifact that proves the spec is implementable.
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-## Planned layout (Foundry)
+Foundry consists of:
 
+- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+
+## Documentation
+
+https://book.getfoundry.sh/
+
+## Usage
+
+### Build
+
+```shell
+$ forge build
 ```
-reference/
-├── foundry.toml
-├── src/        # contracts implementing the spec interface
-├── test/       # unit/invariant tests
-└── script/     # deployment / example scripts
+
+### Test
+
+```shell
+$ forge test
 ```
 
-## Getting started (once code is added)
+### Format
 
-```bash
-cd reference
-forge build
-forge test
+```shell
+$ forge fmt
 ```
 
-> Code here is licensed under MIT (see [`../LICENSE`](../LICENSE)).
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
